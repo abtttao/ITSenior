@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    background-color: #f6f6f6;
+}
+table thead {
+    background-color:#4560a0 ;
+    color: #ffffff;
+}
+table {
+    background-color:#ffffff ;
+    color: #000000;
+}
+
+#icon_sb{
+    width: 100%;
+    max-width: 45px;
+    height: auto;
+}
+
+#icon_ex{
+    width: 100%;
+    max-width: 20px;
+    height: auto;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: #ffffff;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: #8f9194;
+    padding: 5px;
+    padding-left: 50px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: #fdfdfd;
+    color: #253B6E(5, 5, 5);
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: orange;
+    color: white;
+}
+
+div.content {
+    background-color: #f6f6f6;
+    margin-top: 100px;
+    margin-left: 250px;
+    padding: 1px 16px;
+   
+  
+}
+
+#IT_nav_logo {
+    width: 100%;
+    max-width: 380px;
+  
+    height: auto;
+}
+
+.btnAssignment{
+    margin-top: 4.80%;
+}
+
+#btnEdit ,  #btnAssign{
+    color: #ffffff;
+    width: 90px;
+    height: 40px;
+}
+
+#btnEditScore ,  #btnEditGrade ,#btnAssignGrade{
+    color: #ffffff;
+    width: 90px;
+    height: 40px;
+}
+
+.navbar {
+    background-color: #253B6E;
+}
+
+#hr1 {
+
+    width: 100%;
+    height: 3px;
+    background-color: #253B6E;
+    text-align: center;
+}
+
+#hr2 {
+    width: 0;
+    height: 0;
+}
+
+/* News */
+#News{
+    color: rgb(255, 255, 255);
+}
+
+#tbNews thead{
+    background-color:#4560a0 ;
+    color: white;
+}
+
+#tbNews{
+    background-color:#ffffff ;
+    color: rgb(0, 0, 0);
+}
+
+#news{
+    width: 35%;
+}
+
+#btn_excel {
+    background-color: green;
+    color: white;
+}
+
+#sb_active {
+    color: #253B6E;
+}
+
+#btn_add_delete {
+    color: black;
+}
+
+#title_page {
+    margin-top: 2%;
+    color: #253B6E;
+}
+
+#drop_role {
+    width: 100%;
+    max-width: 59%;
+}
+
+#groupTable,#dueDateTable,#assignmentTable {
+    background-color: white;
+}
+
+#select_sem {
+    width: 100%;
+    max-width: 60%;
+}
+
+#select_grade {
+    width: 100%;
+    max-width: 85%;
+}
+
+#tb_criteria {
+    text-align: center;
+    background-color: white;
+}
+
+#gradeTable thead,#scoreTable thead, #teacherTable thead,#assignmentTable thead,#groupTable thead, #dueDateTable thead{
+    background-color:#4560a0 ;
+    color: white;
+}
+
+#txt_name{
+    margin-left: 6%;
+}
+
+#txt_name2{
+    margin-left: 2%;
+}
+
+#txt_name3{
+    margin-left: 8%;
+}
+
+#txt_name4{
+    margin-left: 10%;
+}
+
+#txt_name5{
+    margin-left: 4%;
+}
+
+#group_title{
+    color: black;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        margin-top: 110px;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    #Text_proposal{
+        text-align: left;
+    }
+
+    div.content {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        float: none;
+    }
+}
+
+#txt_score_criteria {
+    color: red;
+}
+
+#groupTable tr.odd:hover , #groupTable tr.even:hover,#assignmentTable tr td.clicks:hover , #assignmentTable tr td.clicks:hover  {
+    background-color: #253B6E;
+    cursor: pointer;
+    color:white;
+    cursor: pointer;
+}
+
+#example  thead{
+    background-color:#4560a0 ;
+    color: #ffffff;
+}
+
+#example  {
+    background-color:#ffffff ;
+    color: #000000;
+}

@@ -1,0 +1,566 @@
+body {
+    margin: 0;
+    /* background-color: #253B6E; */
+    
+}
+
+/*=================================== Pagegroupadvisee and pagegrouprequest =============================*/
+
+/*================================================== Nav_bar ============================================*/
+.navbar {
+    background-color: #253B6E;
+}
+
+#CardName{
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #253B6E;
+    border: none;
+}
+
+#IT_nav_logo {
+    width: 100%;
+    max-width: 580px;
+    height: auto;
+    float: left;
+}
+
+#User_Name{
+    color: rgb(255, 255, 255);
+    font-size: 120%;
+}
+
+#Role1 {
+    color: #72CEF7;
+    font-size: 18px;
+}
+
+#profile-name{
+    display: flex;
+    flex-direction:column;
+}
+/*================================= Side Bar ============================================*/
+
+.sidebar {
+    margin-top: 80px;
+    padding: 0;
+    width: 350px;
+    background-color: #253B6E;
+    position: absolute;
+    float: left;
+    height:1450px;
+    overflow: auto;
+    float: left;
+    
+}
+
+.sidebar a {
+    display: block;
+    color: #ffffff;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: red;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: red;
+    color: white;
+}
+
+.sidebar a {
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
+}
+
+div.content {
+    background-color: #ffffff;
+    margin-left: 350px;
+    height: auto;
+   
+    
+}
+
+#dueDate{
+    background-color: #253B6E; 
+    height: 65%; 
+    width: 25%; 
+    font-size: 18px;
+    
+}
+
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+      margin-top: 5%;
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    /* .sidebar a {
+        float: left;
+    } */
+
+    div.content {
+      margin-left: 0px;
+    }
+    .carousel{
+       display: inline-block;
+    
+    }
+
+
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: left;
+      float: none;
+
+    }
+    .carousel{
+       display: inline-block;
+
+      ;
+    }
+
+  }
+
+  
+/* ======================= Content =========================================================*/
+
+
+
+/* =======================Title_And_Advisee_Committee_Group_Request_Text ===================*/
+.Senior_project_title{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#Underline{
+    text-align: center;
+    width: 78%;
+    margin-left: 10%;
+}
+
+#hr1{
+    margin-right: 120px;
+    width:40%;
+    height:6px;
+    background-color: #253B6E;
+}
+
+button.link { background:none;border:none; }
+
+/*=============================================== Progress Bar ======================================= */
+
+ul li span {
+
+    content: '';
+
+    display: inline-block;
+
+    height: 20px;
+
+    width: 20px;
+
+    background-size: 20px;
+
+    background-repeat: no-repeat;
+
+}
+
+
+
+.progressbar li {
+    list-style-type: none;
+    width: 11%; /* ความยาวเส้น */
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7d7d7d;
+}
+
+/* วงกลม' */
+.progressbar li:after {
+    width: 30px;
+    height: 30px;
+    content: '';
+    /* counter-increment: step; */
+    line-height: 30px;
+    border: 2px solid #7d7d7d;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color:  #b8b8b8;
+}
+
+/* เส้น */
+.progressbar li::before {
+    width: 100%;
+    height: 5px;
+    content: '';
+    position: absolute;
+    background-color: #7d7d7d;
+    top: 37px;
+    left: -50%;
+    z-index: -1;
+}
+
+.dropdown-menu dropdown{
+    z-index: 1000;
+}
+
+/* ปิดเส้นหน้าสุด */
+.progressbar li:first-child::before {
+    content: none;
+}
+
+/* สีตัวหนังสือ ไอคอน */
+.progressbar li.active {
+    color: green;
+}
+
+/* สีวงกลม */
+.progressbar li.active::after {
+    border-color: red;
+    background-color:red;
+
+}
+
+/* สีเส้น */
+.progressbar li.active+li::before {
+    background-color: red;
+}
+
+
+.card {
+    background: #FAFAFA;
+    height: 180px;	
+    width: 70%;
+    margin-top: 4%;
+    margin-left: 3%;
+    margin-right: 3%;
+    /* border: 10px; */
+    border-color: rgb(5, 5, 131);
+}
+.card_invite {
+    background: #FAFAFA;
+    height: 150px;	
+    width: 70%;
+    /* margin-top: 4%; */
+    /* margin-left: 15%; */
+    /* margin-right: 3%; */
+}
+.card_submission {
+    background: white;
+    height: 320px;	
+    /* height: auto;	 */
+    width: 100%;
+    /* margin-top: 4%; */
+    /* margin-right: 10%; */
+    border-color: rgb(5, 5, 131);
+}
+
+
+
+[class*="row"] {
+	
+  justify-content: center;
+}
+
+
+
+
+/* =========================Footer========================================== */
+
+footer {
+    color: white;
+}
+
+#social_icon {
+    width: 10%;
+    height: 10%;
+
+}
+
+#footer_contact {
+    text-align: left;
+    
+
+}
+
+.FooterFB{
+   margin-top: 10%;
+}
+
+
+#Boxfield{
+    width: 90%;
+}
+
+#Boxfield2{
+    width: 80%;
+}
+
+
+#Role{
+    color: yellow;
+    margin-left: 340px;
+}
+#bell{
+    left: 15%;
+    
+}
+
+#footer_contact {
+    text-align: left;
+
+}
+
+#hr1 {
+    width: 100%;
+    height: 3px;
+    background-color: #253B6E;
+    text-align: center;
+}
+
+.assignment_status{
+    color: #BDBDBD;
+    margin-left: 47%;
+}
+
+.signature1{
+    font-size: 20px;
+    
+}
+
+.signature2{
+    font-size: 18px;
+    color: #BDBDBD;
+    
+}
+
+.score{
+    font-size: 18px;
+}
+
+.border{
+    height: 1200px;
+    width: 80%;
+    margin-bottom: 3%;
+    background-color: rgb(214, 214, 214);
+}
+
+#file{
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin-top: 50%;
+}
+
+.table-responsive {
+    display: table;
+}
+
+
+#btn_group {
+    background-color:#253B6E;
+    margin-top: 10%;
+    height: 50px;
+}
+
+#btn_reject{
+    background-color: red;
+    font-weight: bold;
+    width: 40%;
+    height: 30%;
+}
+
+#btn_join{
+    background-color: #72CEF7;
+    font-weight: bold;
+    width: 40%;
+    height: 30%;
+}
+
+#card_btn{
+    margin-left: 30%;
+}
+
+#btn_underCard{
+    background-color:#253B6E ;
+    height: 50px;
+    margin-left: 20%;
+
+}
+
+#cardBtn{
+    color:#253B6E ;
+    font-weight: bold;
+    height: 45px;
+    width: 20%;
+    margin-top: 50%;
+    margin-left: 40%;
+    position: relative;
+}
+
+#btn_unsubmit{
+    /* color:#253B6E ; */
+    font-weight: bold;
+    height: 45px;
+    width: 20%;
+    margin-top: 50%;
+    margin-left: 45%;
+    position: relative;
+}
+
+#btn_resubmit{
+    /* color:#253B6E ; */
+    font-weight: bold;
+    height: 45px;
+    width: 15%;
+}
+
+#title_page {
+    color: #253B6E;
+}
+
+
+#inviteCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    cursor: pointer;
+}
+
+.clickFile:hover{
+    cursor: pointer;
+}
+
+/*================================= NEWS ============================================*/
+#Senior_project_title2{
+    text-align: center;
+    margin-top: 5%;
+}
+.carousel{
+    margin-top: 14%;
+    background-color: #253B6E;
+    width: 90%;
+    margin-left: 5%;
+    /* display: inline-block; */
+	position: relative;
+  ;
+}
+.carousel-item{
+    min-height: 300px;
+  
+}
+
+#cardNews{
+    width: 60%;
+    margin-left: 20%;
+    background-color: #ffffff;
+    padding: 15px;
+}
+
+#News{
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+  
+/* ======================= Content =========================================================*/
+
+.projectname {
+    margin-left: 50px;
+    margin-right: 110px;
+}
+
+.student {
+    margin-left: 50px;
+    margin-right: 110px;
+}
+.advisor {
+    margin-left: 50px;
+    margin-right: 110px;
+}
+
+.committee {
+    margin-left: 50px;
+    margin-right: 110px;
+}
+
+.coAdvisor {
+    margin-left: 50px;
+    margin-right: 110px;
+}
+
+.projectedit{
+    margin-left: 85px;
+    margin-right: 110px;
+}
+
+.projecteditCommittee {
+    margin-left: 85px;
+    margin-right: 110px;
+}
+
+.nameproject {
+margin-left: 180px;
+margin-right: 110px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin-top: 100px;
+    }
+
+   }
+
+@media screen and (max-width: 375px) {
+    .content {
+        margin-top: 10px;
+    }
+
+   }
+/* ======================= detail ========================================================== */
+.detail{
+    margin-left: 50px;
+}
+.badge {
+    margin-right: 136px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .badge {
+        margin-right: 75px;
+    }
+
+   }
+
+   @media screen and (max-width: 768px) {
+    .badge {
+        margin-right: 45px;
+    }
+
+   }
+  
+  @media screen and (max-width: 595px) {
+    .badge  {
+        margin-right: 40px;
+    }
+
+  }

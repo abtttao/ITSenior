@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/styleAdmin">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script type="text/javascript" src="/adminjs/groupInfoAdmin.js"></script>
+    <title>Group Information</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse fixed-top">
+        <div class="container-fluid">
+            <div class="col-lg-10 col-md-6 mb-6 mb-md-0">
+                <a href="#"><img src="/assets/images/IT Logo.png" id="IT_nav_logo"></a>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-6 mb-md-0">
+                <button type="button" class="btn btn  text-light  float-right" id="log_out"><img
+                        src="/assets/images/Admin/logout-w.svg" id="icon_ex" class="mr-2"> </i> LOG OUT</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="/adminhome">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/user-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal"><b>USER</b> </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminassignment">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/assignment-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal"> ASSIGNMENT </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+        <a href="/admingroup" class="active">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/group.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal"> <b>GROUP</b> </p>
+                </div>
+                <div class="col-1 mt-3 ml-1" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminscore">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/score-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">SCORE</p>
+                </div>
+                <div class="col-1 mt-3" id="lock"></div>
+            </div>
+        </a>
+        <a href="/admincriteria">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/criteria-w.svg" id="icon_sb">
+                </div>
+                <div class="col-7 mt-4">
+                    <p id="Text_proposal">CRITERIA</p>
+                </div>
+                <div class="col-1 mt-3 ml-4" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminnews">
+            <div class="row proposal Card_proposal mb-2">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/assignment-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal"> <b>NEWS</b> </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h3 class="container mb-5" id="title_page"><b>GROUP INFORMATION</b></h3>
+        <div class="container p-5 mb-5" style="background-color: white;">
+            <!-- Project Name -->
+            <div class="input-group mb-3">
+                <h4><b>ชื่อโปรเจค :</b></h4>
+                <h4 id="txt_name">แอปพลิเคชันตรวจสอบอากาศ</h4>
+            </div>
+
+            <div class="input-group mb-3">
+                <h4><b>Project Name :</b></h4>
+                <h4 id="txt_name2">Air Quailty Application</h4>
+            </div>
+
+            <!-- Group Member -->
+            <div class="input-group mb-3 mt-5">
+                <h3><b>Group Member </b></h3>
+            </div>
+
+            <div class="input-group mb-3">
+                <h4><b>Student 1 </b></h4>
+                <h4 id="txt_name3">Anuwat Bunrueng </h4>
+            </div>
+            <div class="input-group mb-3">
+                <h4><b>Student 2 </b></h4>
+                <h4 id="txt_name3">Anuwat Bunrueng </h4>
+            </div>
+            <div class="input-group mb-3">
+                <h4><b>Student 3 </b></h4>
+                <h4 id="txt_name3">Anuwat Bunrueng </h4>
+            </div>
+
+            <!-- Advisor Name -->
+            <div class="input-group mb-3 mt-5">
+                <h3><b>Project Advisor </b></h3>
+            </div>
+
+            <div class="input-group mb-3">
+                <h4><b>Advisor </b></h4>
+                <h4 id="txt_name4">Anuwat Bunrueng </h4>
+            </div>
+            <!-- Co-Advisor Name -->
+            <div class="input-group mb-3 mt-5">
+                <h3><b>Project Co-Advisor </b></h3>
+            </div>
+
+            <div class="input-group mb-3">
+                <h4><b> Co-Advisor </b></h4>
+                <h4 id="txt_name">Anuwat Bunrueng </h4>
+            </div>
+
+            <!-- Committee Name -->
+            <div class="input-group mb-3 mt-5">
+                <h3><b>Project Committee </b></h3>
+            </div>
+
+            <div class="input-group mb-3">
+                <h4><b>Committee 1 </b></h4>
+                <h4 id="txt_name5">Anuwat Bunrueng </h4>
+            </div>
+
+            <div class="input-group mb-3">
+                <h4><b>Committee 2 </b></h4>
+                <h4 id="txt_name5">Anuwat Bunrueng </h4>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="/assets/js/checkpage.js"></script>
+
+
+
+</html>

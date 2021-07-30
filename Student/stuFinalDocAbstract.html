@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/styleStudent">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>
+    <script type="text/javascript" src="/studentjs/stufinaldocabstract.js"></script>
+    <script type="text/javascript" src="/studentjs/showDueDate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <title>Final Document Abstract</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a href="#"><img src="/assets/images/IT Logo.png" id="IT_nav_logo"></a>
+
+        <!-- //Information User// -->
+        <div class="card text-right" id="CardName">
+            <div class="card-body">
+                <div class="row ">
+                    <div class="col" id="profile-name">
+
+                        <!-- //Naame User// -->
+                        <h4 id="User_Name"></h4>
+                        <h4 id="Role1">STUDENT</h4>
+                    </div>
+                    <div class="col-md-auto">
+
+                        <!-- ///Profile User/// -->
+                        <div class="dropdownUser ">
+                            <a class="btn-floating btn-lg black" type="button" id="ImgUser" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"> <img id="set_image"
+                                    src="https://pro.propeller.in/assets/images/avatar-icon-40x40.png" width="50"
+                                    height="50" alt="avatar"></a>
+
+                            <div class="dropdown-menu dropdown">
+                                <a class="dropdown-item" href="/sturesult"></i>&nbsp;&nbsp;SCORE <img
+                                        src="/assets/images/grade.png" style="width: 25%; margin-left: 6%;"></a>
+                                <a class="dropdown-item" id="log_out"></i>&nbsp;&nbsp;LOGOUT <img
+                                        src="/assets/images/logout.svg" style="width: 20%; margin-left: 4%;"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Progress Bar -->
+    <div class="container-lg-12" id="pro" style="top: 14%; background-color: white; ">
+        <ul class="progressbar mt-3 ml-4 ">
+            <li class="active"><span
+                    style="background-image:  url('/assets/images/group.svg');color: rgb(247, 4, 4);"></span>&nbsp;
+            </li>
+            <li id="toppicco"><span
+                    style="background-image:  url('/assets/images/2 topic.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="proposalco"><span
+                    style="background-image:  url('/assets/images/3 proposal.svg');color: rgb(252, 1, 1);"></span>&nbsp;
+            </li>
+            <li id="progress1co"><span
+                    style="background-image:  url('/assets/images/4\ progress1.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="progress2co"><span
+                    style="background-image:  url('/assets/images/5\ progress2.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="progress3co"><span
+                    style="background-image:  url('/assets/images/6\ progress3.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="finalpreco"><span
+                    style="background-image:  url('/assets/images/7\ finalpre.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="finaldocco"><span
+                    style="background-image:  url('/assets/images/8\ finaldoc.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="reevalueco"><span
+                    style="background-image:  url('/assets/images/9\ re-eva.svg');color: black;"></span>&nbsp;
+            </li>
+        </ul>
+    </div>
+
+    <!-- Side bar -->
+    <div class="sidebar">
+        <a href="/stucreategroup">
+            <i class="fa fa-group ml-2 " style="font-size: 30px;"></i>
+            <span class="MenuText  ml-2"> GROUP </span>
+            <span class="MenuText " id="lock"></span>
+        </a>
+
+        <a href="/stucreatetopic" id="toppic">
+            <img src="/assets/images/2 topic-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> TOPIC </span>
+            <span id="toppicch" class="MenuText  float-right mt-2"> </span>
+        </a>
+
+        <a href="/stuproposalapproval" id="proposal">
+            <img src="/assets/images/3 proposal-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROPOSAL </span>
+            <span id="proposalch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stuprogress1approval" id="progress1">
+            <img src="/assets/images/4 progress1-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROGRESS 1</span>
+            <span id="progress1ch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stuprogress2approval" id="progress2">
+            <img src="/assets/images/5 progress2-w.svg" style="width: 35px;height: 35px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROGRESS 2</span>
+            <span id="progress2ch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stuprogress3approval" id="progress3">
+            <img src="/assets/images/6 progress3-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROGRESS 3</span>
+            <span id="progress3ch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stufinalpresentationapproval" id="finalpre">
+            <img src="/assets/images/7 finalpre-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText ml-2"> FINAL PRESENTATION</span>
+            <span id="finalprech" class="MenuText float-right mt-2"></span>
+        </a>
+
+        <a href="/stufinaldocabstractapproval" id="finaldoc">
+            <img src="/assets/images/8 finaldoc-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> FINAL DOCUMENTATION</span>
+            <span id="finaldocch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stufinaldocabstractapproval" id="abstract" class="active">
+            <img src="/assets/images/8 finaldoc-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-5"> ABSTRACT</span>
+            <span id="abstractch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stufinaldocfullapproval" id="fulldoc">
+            <img src="/assets/images/8 finaldoc-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-5"> FULL DOCUMENTATION</span>
+            <span id="fulldocch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stufinaldocotherapproval" id="other">
+            <img src="/assets/images/8 finaldoc-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-5">OTHER</span>
+            <span id="otherch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stureevaluationapproval" id="reevalue">
+            <img src="/assets/images/10 re-eva-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> RE-EVALUATION</span>
+            <span id="reevaluech" class="MenuText  float-right mt-2"></span>
+        </a>
+        <div class="row proposal Card_blank ">
+        </div>
+    </div>
+
+
+    <div class="content">
+
+        <div class="container-fluid dashboard-content">
+            <div class="Senior_project_title">
+                <h1 id="Senior_project_title"> ABSTRACT</h1><br>
+
+                <!-- Underline -->
+                <div style="border: 0.5px solid  rgb(172, 171, 171); " id="Underline"></div>
+            </div>
+            <!-- Text_senior_project -->
+
+            <div class="row ">
+
+                <div class="col md-12">
+                    <span id="dueDate" class="badge badge-primary float-right  "
+                        ></span>
+
+                </div>
+
+
+                <br><br>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row ">
+
+                    <div class="col-md-7 mt-2">
+
+                    </div>
+                    <div class="col md-5">
+                        <h3 class="assignment_status">Assigned</h3>
+
+                    </div>
+
+                    <br><br>
+
+                </div>
+
+                <br>
+
+
+                <div class="row mt-5" style="margin-right: 10%;">
+                    <div class="col-md-8" id="sendFile">
+                        <form enctype="multipart/form-data" method="POST" id="importfile"
+                            action="/import/student/upload">
+                            <div class="card card-bordered" style="width:110%;height: auto;">
+                                <div class="card-body">
+                                    <img src="/assets/images/paper-clip 1.svg" style="width: 9%; margin-left: 48%;"
+                                        class="mt-2 mb-2">
+                                    <h5 style="color: grey; text-align: center;"> ONLY PDF,DOC,PPT FILE</h5>
+                                    <h5 style="color: grey; text-align: center;"> MAX UPLOAD FILE SIZE : 2MB
+                                    </h5>
+                                    <div class="row d-flex justify-content-center">
+                                        <span id="filenameShow">No file upload</span>
+                                    </div>
+                                    <div class="row d-flex justify-content-center my-2">
+                                        <input type="file" name="fileUpload" id="fileUpload" style="display: none;"
+                                            enctype="multipart/form-data" onChange='getFileNameWithExt(event)'
+                                            accept=".pdf, .doc, .ppt" multiple>
+
+                                        <button type="button" class="btn ml-2 mt-2" id="picture"
+                                            onclick="document.getElementById('fileUpload').click();"
+                                            style="background-color: #0164b8;height: 50px;">
+
+                                            <span style="color: white;">ADD FILE</span>
+
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary mt-5" id="btn_underCard">TURN IN</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="col-md-8" id="waitingToCheck">
+
+                    </div>
+
+                    <br>
+                    <br>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+
+    </div>
+
+
+
+</body>
+
+
+</html>

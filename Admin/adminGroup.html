@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="/styleAdmin">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/adminjs/groupAdmin.js"></script>
+    <title>Group</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse fixed-top">
+        <div class="container-fluid">
+            <div class="col-lg-10 col-md-6 mb-6 mb-md-0">
+                <a href="#"><img src="/assets/images/IT Logo.png" id="IT_nav_logo"></a>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-6 mb-md-0">
+                <button type="button" class="btn btn  text-light  float-right" id="log_out"><img
+                        src="/assets/images/Admin/logout-w.svg" id="icon_ex" class="mr-2"> </i> LOG OUT</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="/adminhome">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/user-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p>USER </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminassignment">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/assignment-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal"> <b>ASSIGNMENT</b> </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+        <a href="/admingroup" class="active">
+            <div class="row proposal Card_proposal " id="sb_active">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/group.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">GROUP </p>
+                </div>
+                <div class="col-1 mt-3 ml-1" id="lock"> </div>
+            </div>
+        </a>
+        <a href="/adminscore">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/score-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">SCORE</p>
+                </div>
+                <div class="col-1 mt-3" id="lock"></div>
+            </div>
+        </a>
+        <a href="/admincriteria">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/criteria-w.svg" id="icon_sb">
+                </div>
+                <div class="col-7 mt-4">
+                    <p id="Text_proposal">CRITERIA</p>
+                </div>
+                <div class="col-1 mt-3 ml-4" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminnews">
+            <div class="row proposal Card_proposal mb-2 ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/assignment-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal"> <b>NEWS</b> </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h3 id="title_page"><b>GROUP</b></h3>
+        <div class="row mt-4">
+            <div class="col-lg-5 col-md-6 col-mb-6 mb-4">
+                <h5>STUDY PROGRAMES</h5>
+                <div>
+                    <select class="form-control" id="selectMajor">
+                        <option value="IT">Information Technology</option>
+                        <option value="CE">Computer Engineering</option>
+                        <option value="CSI">Computer Science and Innovation</option>
+                        <option value="ICE">Information and Communication Engineering</option>
+                        <option value="MTA">Multimedia Technology and Animation</option>
+                        <option value="SE">Software Engineering</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-6 col-mb-6"></div>
+        </div>
+
+        <!-- Assignment Table -->
+        <table id="groupTable" class="table table-bordered  table-responsive-xl mt-5 text-center" style="width:100%;"></table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="groupInfoModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="title_page">GROUP INFORMATION</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <b class="">Project Name</b>
+                            </div>
+                            <div class="col-md-7 float-left">
+                                <input class="form-control " type="text" id="txt_projectNameEng">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4"> </div>
+                            <div class="col-md-7 float-left" style="margin-top: -3%;">
+                                <input class="form-control " type="text" id="txt_projectNameThai">
+                            </div>
+                        </div>
+                        <div class="student">
+                            <hr>
+                            <p class="mt-4"><b>Group Member </b></p>
+                            <div id="studentMember"></div>
+                        </div>
+                        <div class="advisor">
+                            <hr>
+
+                            <p id="mt-4"><b>Project Advisor </b></p>
+                            <div id="advisorMember"> </div>
+                        </div>
+
+                        <div id="committee">
+                            <hr>
+                            <p class="mt-4"><b>Project Committee</b></p>
+                            <div id="committeeMember"></div>
+                        </div>
+
+                        <div id="coAdvisor">
+                            <hr>
+                            <p class="mt-4"><b>Project Co-Advisor</b></p>
+                            <div id="coAdvisorMember">
+                                <p style="margin-top: -2%;"><strong>Co-Advisor</strong> <span>Anuwat Bunrueng</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                        <button type="button" class="btn btn-primary" id="btn_SaveData"
+                            data-dismiss="modal">SAVE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

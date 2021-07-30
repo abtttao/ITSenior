@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="/styleStudent">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>
+    <script type="text/javascript" src="/studentjs/stucreategroupinfo.js"></script>
+    <title>CREATE GROUP INFO</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a href="/createGroup"><img src="/assets/images/IT Logo.png" id="IT_nav_logo"></a>
+
+        <!-- //Information User// -->
+        <div class="card text-right" id="CardName">
+            <div class="card-body">
+                <div class="row ">
+                    <div class="col" id="profile-name">
+
+                        <!-- //Naame User// -->
+                        <h4 id="User_Name"></h4>
+                        <h4 id="Role1">STUDENT</h4>
+                    </div>
+                    <div class="col-md-auto">
+
+                        <!-- ///Profile User/// -->
+                        <div class="dropdownUser ">
+                            <a class="btn-floating btn-lg black" type="button" id="ImgUser" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"> <img id="set_image"
+                                    src="https://pro.propeller.in/assets/images/avatar-icon-40x40.png" width="50"
+                                    height="50" alt="avatar"></a>
+
+                            <div class="dropdown-menu dropdown">
+                                <a class="dropdown-item" href="/sturesult"></i>&nbsp;&nbsp;SCORE <img
+                                        src="/assets/images/grade.png" style="width: 25%; margin-left: 6%;"></a>
+                                <a class="dropdown-item" id="log_out"></i>&nbsp;&nbsp;LOGOUT <img
+                                        src="/assets/images/logout.svg" style="width: 20%; margin-left: 4%;"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Progress Bar -->
+    <div class="container-lg-12" id="pro" style="top: 14%; background-color: white; ">
+        <ul class="progressbar mt-3 ml-4 ">
+            <li class="active"><span
+                    style="background-image:  url('/assets/images/group.svg');color: rgb(247, 4, 4);"></span>&nbsp;
+            </li>
+            <li id="toppicco"><span
+                    style="background-image:  url('/assets/images/2 topic.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="proposalco"><span
+                    style="background-image:  url('/assets/images/3 proposal.svg');color: rgb(252, 1, 1);"></span>&nbsp;
+            </li>
+            <li id="progress1co"><span
+                    style="background-image:  url('/assets/images/4\ progress1.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="progress2co"><span
+                    style="background-image:  url('/assets/images/5\ progress2.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="progress3co"><span
+                    style="background-image:  url('/assets/images/6\ progress3.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="finalpreco"><span
+                    style="background-image:  url('/assets/images/7\ finalpre.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="finaldocco"><span
+                    style="background-image:  url('/assets/images/8\ finaldoc.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="reevalueco"><span
+                    style="background-image:  url('/assets/images/9\ re-eva.svg');color: black;"></span>&nbsp;
+            </li>
+        </ul>
+    </div>
+
+    <!-- Side bar -->
+    <div class="sidebar">
+        <a href="/stucreategroup" class="active">
+            <i class="fa fa-group ml-2 " style="font-size: 30px;"></i>
+            <span class="MenuText  ml-2"> GROUP </span>
+            <span class="MenuText " id="lock"></span>
+        </a>
+
+        <a href="/stucreatetopic" id="toppic">
+            <img src="/assets/images/2 topic-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> TOPIC </span>
+            <span id="toppicch" class="MenuText  float-right mt-2"> </span>
+        </a>
+
+        <a href="/stuproposalapproval" id="proposal">
+            <img src="/assets/images/3 proposal-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROPOSAL </span>
+            <span id="proposalch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stuprogress1approval" id="progress1">
+            <img src="/assets/images/4 progress1-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROGRESS 1</span>
+            <span id="progress1ch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stuprogress2approval" id="progress2">
+            <img src="/assets/images/5 progress2-w.svg" style="width: 35px;height: 35px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROGRESS 2</span>
+            <span id="progress2ch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stuprogress3approval" id="progress3">
+            <img src="/assets/images/6 progress3-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROGRESS 3</span>
+            <span id="progress3ch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stufinalpresentationapproval" id="finalpre">
+            <img src="/assets/images/7 finalpre-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText ml-2"> FINAL PRESENTATION</span>
+            <span id="finalprech" class="MenuText float-right mt-2"></span>
+        </a>
+
+        <a href="/stufinaldocabstractapproval" id="finaldoc">
+            <img src="/assets/images/8 finaldoc-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> FINAL DOCUMENTATION</span>
+            <span id="finaldocch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stureevaluationapproval" id="reevalue">
+            <img src="/assets/images/10 re-eva-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> RE-EVALUATION</span>
+            <span id="reevaluech" class="MenuText  float-right mt-2"></span>
+        </a>
+        <div class="row proposal Card_blank ">
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Text_senior_project -->
+        <div class="container-fluid dashboard-content">
+            <div class="Senior_project_title">
+                <h1 id="Senior_project_title">CREATE GROUP</h1><br>
+                <!-- Underline -->
+                <div style="border: 0.5px solid  rgb(172, 171, 171); " id="Underline"></div>
+            </div>
+
+        </div>
+
+        <!-- TODO: add required project name -->
+        <div class="container-fluid  ml-3">
+            <!-- <form> -->
+            <div class="form-group row mt-5">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">
+                    <h4><b id="status_name">Project Name</b></h4>
+                </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control ProjectNameEng" placeholder="English Name" required
+                        id="Boxfield">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control ProjectNameTha" placeholder="Thai Name" required
+                        id="Boxfield">
+                </div>
+            </div>
+
+
+
+            <h3>Project Member</h3>
+
+            <!-- <form class="mt-3"> -->
+            <div class="row mt-3 ">
+                <div class="col-sm-2 col-form-label">
+                    <b id="status_name">Student 1</b>
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control sname1" placeholder="Name" id="Boxfield2">
+                    <input type="text" class="form-control mt-3 sphone1" placeholder="Phone" id="Boxfield2">
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control sid1" placeholder="ID" id="Boxfield2">
+                    <input type="email" class="form-control  mt-3 smail1" placeholder="6131302XXX@lamdua.mfu.ac.th"
+                        id="Boxfield2">
+                </div>
+            </div>
+            <!-- </form> -->
+
+            <!-- <form class="mt-3"> -->
+            <div class="row mt-3">
+                <div class="col-sm-2 col-form-label">
+                    <b id="status_name">Student 2</b>
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control sname2" placeholder="Name" id="Boxfield2">
+                    <input type="text" class="form-control mt-3 sphone2" placeholder="Phone" id="Boxfield2">
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control sid2" placeholder="ID" id="Boxfield2">
+                    <input type="email" class="form-control mt-3 smail2" placeholder="6131302XXX@lamdua.mfu.ac.th"
+                        id="Boxfield2">
+                </div>
+            </div>
+            <!-- </form> -->
+
+            <!-- <form class="mt-3 mb-3"> -->
+            <div class="row my-3">
+                <div class="col-sm-2 col-form-label">
+                    <b id="status_name">Student 3</b>
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control sname3" placeholder="Name" id="Boxfield2">
+                    <input type="text" class="form-control mt-3 sphone3" placeholder="Phone" id="Boxfield2">
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control sid3" placeholder="ID" id="Boxfield2">
+                    <input type="email" class="form-control  mt-3 smail3" placeholder="6131302XXX@lamdua.mfu.ac.th"
+                        id="Boxfield2">
+
+                </div>
+            </div>
+
+            <div class="row mt-3 std4" style="display:none;">
+                <div class="col-sm-2 col-form-label">
+                    <b id="status_name">Student 4</b>
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control sname4" placeholder="Name" id="Boxfield2">
+                    <input type="text" class="form-control mt-3 sphone4" placeholder="Phone" id="Boxfield2">
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control sid4" placeholder="ID" id="Boxfield2">
+                    <input type="email" class="form-control mt-3 smail4" placeholder="6131302XXX@lamdua.mfu.ac.th"
+                        id="Boxfield2">
+                </div>
+            </div>
+
+            <div class="row my-3 std5" style="display:none;">
+                <div class="col-sm-2 col-form-label">
+                    <b id="status_name">Student 5</b>
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control sname5" placeholder="Name" id="Boxfield2">
+                    <input type="text" class="form-control mt-3 sphone5" placeholder="Phone" id="Boxfield2">
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control sid5" placeholder="ID" id="Boxfield2">
+                    <input type="email" class="form-control mt-3 smail5" placeholder="6131302XXX@lamdua.mfu.ac.th"
+                        id="Boxfield2">
+                </div>
+            </div>
+
+            <div class="row addmemb">
+                <div class="col-2"></div>
+                <div class="col-5">
+                    <button type="button" class="link">
+                        <p class="my-3" id="addmem" style="color: #253B6E; font-weight: bold; font-size: 20px;">
+                            + Add Member
+                        </p>
+                    </button>
+                </div>
+                <div class="col-5"></div>
+            </div>
+
+            <!-- </form> -->
+
+
+            <!-- </form> -->
+
+            <h3>Project Advisor</h3>
+
+            <!-- <form> -->
+            <div class="form-group row mt-4">
+                <label for="inputEmail3" class="col-sm-2 col-form-label"> <b id="status_name">Advisor</b></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control Advisor" placeholder="English Name" required id="Boxfield">
+                </div>
+            </div>
+
+            <!-- </form> -->
+
+            <div class="form-check form-check-inline mt-3 mb-4 ">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1" id="status_name"> <b>Co-Advisor</b> </label>
+            </div>
+
+
+            <h3>Project Committee</h3>
+            <!-- <form class="mt-4"> -->
+            <div class="form-group row">
+
+                <label for="inputEmail3" class="col-sm-2 col-form-label"> <b id="status_name">Committee
+                        1</b></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control Comm1" placeholder="English Name" required id="Boxfield">
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label"> <b id="status_name">Committee
+                        2</b></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control Comm2" placeholder="English Name" id="Boxfield">
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary mb-4 " id="btn_group">CREATE GROUP</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+
+
+
+
+</body>
+
+
+</html>

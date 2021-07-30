@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="/styleGeneral">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script type="text/javascript" src="/otherjs/landing.js"></script>
+    <title>Senior Project Information Technology</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse fixed-top">
+        <div class="container-fluid">
+            <div class="col-lg-10 col-md-6 mb-6 mb-md-0">
+                <a href="#"><img src="/assets/images/IT Logo.png" id="IT_nav_logo"></a>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-6 mb-md-0">
+                <button type="button" class="btn btn  text-light  float-right" id="btn_login"><i
+                        class="fa fa-user fa-lg mr-1" aria-hidden="true"></i> LOGIN</button>
+            </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container_content">
+        <div class="row">
+            <div class="col-sm-12  col-xs-12 col-md-4 ">
+                <h4> <b> <i class="fa fa-search mr-2" aria-hidden="true"> </i>Search</b></h4>
+                <div class="mt-3">
+                    <input type="text" placeholder="Keyword" class="form-control" id="searchKeyword">
+                </div>
+                <br>
+                <h4><b class="mt-3">Categories</b></h4>
+                <div class="mt-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="title">
+                        <label class="form-check-label" for="inlineRadio1">Title</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="author">
+                        <label class="form-check-label" for="inlineRadio2">Authors</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="advisor">
+                        <label class="form-check-label" for="inlineRadio2">Advisor</label>
+                    </div>
+                </div>
+                <br>
+                <h4><b class="mt-3">Student Programmes</b></h4>
+                <div class="mt-3">
+                    <select class="form-control">
+                        <option value="CE">Computer Engineering</option>
+                        <option value="CSI">Computer Science and Innovation</option>
+                        <option value="ICE">Information and Communication Engineering</option>
+                        <option value="MTA">Multimedia Technology and Animation</option>
+                        <option value="SE">Software Engineering</option>
+                        <option value="IT">Information Technology</option>
+                    </select>
+                </div>
+                <div class="text-center"> <button type="submit" class="btn btn-primary mb-4 mt-5" id="btn_search">Search
+                        Articles</button>
+                </div>
+            </div>
+            <div class="col-sm-12  col-xs-12 col-md-8">
+                <p>1-2 of Articles</p>
+                <div id="myDIV"></div>
+                <div class="row mt-5">
+                    <div class="col-4">
+                        <button class="btn btn-secondary w-100" id="btnPrev"><i
+                                class="fas fa-arrow-left mr-2"></i><span>Prev</span></button>
+                    </div>
+                    <div class="col-4"> </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary w-100" id="btnNext"><span>Next</span><i
+                                class="fas fa-arrow-right ml-2"></i></button>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

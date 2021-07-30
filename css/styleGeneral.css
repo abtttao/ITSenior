@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+
+}
+
+footer {
+   
+    color: white;
+}
+
+#social_icon {
+    width: 10%;
+    height: 10%;
+
+}
+
+#IT_nav_logo {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+}
+
+#footer_contact {
+    text-align: left;
+
+}
+
+
+.navbar {
+    background-color: #253B6E;
+    color: white;
+}
+
+.textlogin {
+    color: white;
+}
+
+.btn {
+    background-color: #253B6E;
+    color: white;
+
+}
+
+div.container_content {
+    background-color: #ffffff;
+    margin-top: 130px;
+    padding-left: 10%;
+    padding-right: 10%;
+    min-height: 1000px;
+    height: auto
+}
+
+#btn_txt {
+    width: 100%;
+    max-width: 365px;
+    background-color:  #ecebeb;
+    color:  black;
+    font-size: 19px;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#it {
+    color: #253B6E;
+}
+
+#maefah {
+    color: #BDBDBD;
+}
+
+#logo_login {
+    margin-top: 15%;
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+}
+
+#btn_search{
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+}
+
+#img_login{
+    width: 100%;
+    max-width: 30px;
+    float: left;
+}
+
+
+/*================================= NEWS ============================================*/
+#News{
+    color: rgb(255, 255, 255);
+}
+
+#tbNews thead{
+    background-color:#4560a0 ;
+    color: white;
+}
+
+#tbNews{
+    background-color:#ffffff ;
+    color: rgb(0, 0, 0);
+ 
+   
+}
+#news{
+    width: 35%;
+}

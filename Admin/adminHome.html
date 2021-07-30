@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="/styleAdmin">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
+    <script type="text/javascript"
+        src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/adminjs/homeAdmin.js"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse fixed-top">
+        <div class="container-fluid">
+            <div class="col-lg-10 col-md-6 mb-6 mb-md-0">
+                <a href="#"><img src="/assets/images/IT Logo.png" id="IT_nav_logo"></a>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-6 mb-md-0">
+                <button type="button" class="btn btn  text-light  float-right" id="log_out"><img
+                        src="/assets/images/Admin/logout-w.svg" id="icon_ex" class="mr-2"> </i> LOG OUT</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="/adminhome" class="active">
+            <div class="row proposal Card_proposal " id="sb_active">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/user.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p><b>USER</b> </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminassignment">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/assignment-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">ASSIGNMENT</p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+        <a href="/admingroup">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/group-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">GROUP </p>
+                </div>
+                <div class="col-1 mt-3 ml-1" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminscore">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/score-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">SCORE</p>
+                </div>
+                <div class="col-1 mt-3" id="lock"> </div>
+            </div>
+        </a>
+        <a href="/admincriteria">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/criteria-w.svg" id="icon_sb">
+                </div>
+                <div class="col-7 mt-4">
+                    <p id="Text_proposal">CRITERIA</p>
+                </div>
+                <div class="col-1 mt-3 ml-4" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminnews">
+            <div class="row proposal Card_proposal mb-2">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/assignment-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal"> <b>NEWS</b> </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h3 class="ml-2 mt-4" id="title_page"><b>USER</b></h3>
+        <div class="input-group mb-2 mt-3">
+            <div class="input-group-prepend">
+                <button id="btnUser_AdminStudent" class="btn btn " type="button"> <b>STUDENT</b>
+                    <hr id="hr1">
+                </button>
+                <button id="btnUser_AdminTeacher" class="btn btn " type="button">TEACHER
+                    <hr id="hr2">
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <!--  Excel import   -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <button type="button" class="btn btn float-left " id="btn_excel" data-toggle="modal"
+                    data-target="#excelModal"><img src="/assets/images/Admin/excel_upload.svg" id="icon_ex">
+                    <b>IMPORT EXCEL</b> </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="excelModal" tabindex="-1" role="dialog" aria-labelledby="excelModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="excelModalLabel">ADD STUDENT</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row mb-2 d-flex justify-content-center">
+                                    <a href="/assets/StudentTemplate.xlsx"><button
+                                            class="btn btn float-left form-control downloadTemp" id="btn_excel">
+                                            Download excel template </button></a>
+                                </div>
+                                <form enctype="multipart/form-data" method="POST" id="importfile"
+                                    action="/import/importUser">
+                                    <div class="row">
+                                        <div class="col 6">
+                                            <h6>Academic years</h6>
+                                            <div>
+                                                <select class="form-control selectYear" id="importYear">
+                                                    <option>--Select Year--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col 6 ">
+                                            <h6>Semester</h6>
+                                            <div>
+                                                <select class="form-control" id="importSemester">
+                                                    <option value="1"> 1</option>
+                                                    <option value="2"> 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label class="form-label mt-3" for="customFile">
+                                        <h6>Upload files</h6>
+                                    </label>
+                                    <input type="file" class="form-control " name="fileUpload" id="customFile imExcel"
+                                        accept=".xlsx, .xls">
+                                    <div class="d-flex flex-row-reverse">
+                                        <input type="submit" value="Save" class="btn btn-primary my-3 mx-2"
+                                            id="uploadStudent">
+                                        <input type="button" value="close" class="btn btn-secondary my-3" id="closeBTN"
+                                            data-dismiss="modal">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add btn -->
+            <div class="col-lg-1 col-md-3 mb-4">
+                <button type="button" class="btn btn-info float-left" id="btn_add_delete" data-toggle="modal"
+                    data-target="#exampleModal" style="color: white;"> <b>ADD</b> </button>
+
+                <!-- Add Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">ADD STUDENT</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col 6">
+                                        <h6>Academic years</h6>
+                                        <div>
+                                            <select class="form-control selectYear" id="addYear">
+                                                <option>--Select Year--</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col 6">
+                                        <h6>Semester</h6>
+                                        <div>
+                                            <select class="form-control" id="addSemester">
+                                                <option value="1"> 1</option>
+                                                <option value="2"> 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form method="POST" action="/import/add1Student" id="addSingleStudent">
+                                    <div class="form-group mt-3">
+                                        <h6>Email</h6>
+                                        <input type="email" class="form-control studentEmail" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="Enter email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <h6>Name</h6>
+                                        <input type="text" class="form-control studentName" id="exampleInputPassword1"
+                                            placeholder="Enter name" required>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <input type="button" value="close" class="btn btn-secondary my-3" id="closeBTN1"
+                                            data-dismiss="modal">
+                                        <input type="submit" value="Save" class="btn btn-primary my-3 mx-2"
+                                            id="insertTeacher">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit modal -->
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">EDIT STUDENT</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col 6">
+                                    <h6>Academic years</h6>
+                                    <div>
+                                        <select class="form-control selectYear" id="editYear">
+                                            <option>--Select Year--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col 6">
+                                    <h6>Semester</h6>
+                                    <div>
+                                        <select class="form-control" id="editSemester">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <h6>Email</h6>
+                                <input type="email" class="form-control" id="editEmail1" aria-describedby="emailHelp"
+                                    placeholder="Enter email" required>
+                            </div>
+                            <div class="form-group">
+                                <h6>Name</h6>
+                                <input type="text" class="form-control" id="eidtName" placeholder="Enter name" required>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <input type="button" value="close" class="btn btn-secondary my-3" id="closeBTN1"
+                                    data-dismiss="modal">
+                                <input type="submit" value="Save" class="btn btn-primary my-3 mx-2" id="saveEditBtn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delete btn -->
+            <div class="col-lg-1 col-md-3 mb-4">
+                <button type="button" class="btn btn-danger float-left deleteStudent" id="btn_add_delete"
+                    style="color: white;"> <b>DELETE</b>
+                </button>
+            </div>
+
+            <!-- Sort Semester-->
+            <div class="col-lg-5 col-md-4 mb-4 d-flex justify-content-end">
+                <h3>Semester</h3>
+            </div>
+            <div class="col-lg-2 col-md-3 mb-4 d-flex justify-content-end">
+                <select name="" id="SemesterSort" class="form-control">
+                    <option>-Select Semester-</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Table  Name -->
+        <table id="scoreTable" class="table table-bordered  table-responsive-xl my-5 text-center" style="width:100%;"></table>
+    </div>
+
+</body>
+
+</html>

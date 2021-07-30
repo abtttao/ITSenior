@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/styleStudent">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>
+    <script type="text/javascript" src="/studentjs/stutopicevaluationapproval.js"></script>
+    <title>Topic Evaluation Result</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-xl pmd-navbar pmd-z-depth fixed-top">
+        <div class="container-fluid">
+            <div class="col-lg-7 col-md-6 mb-6 mb-md-0" style="right: 16%;">
+                <a href="/stugreategroup"><img src="/assets/images/IT Logo.png" id="IT_nav_logo"></a>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-6 mb-md-0" style="left: 6%;">
+                <div class="dropdownUser ">
+
+                    <!--Trigger-->
+
+                    <a class="btn-floating btn-lg black" type="button" id="dropdownMenu3" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell fa-2x" style="color: white"
+                            style="margin-left: 20px;"></i></a>
+                    <br>
+
+                    <!--Menu-->
+                    <div class="dropdown-menu dropdown" style="margin-left: 27%; ">
+                        <a class="dropdown-item" style="background-color: black; color: white;"
+                            href="/sturesult"></i>&nbsp;&nbsp;ANNOUNCEMENT</a>
+                        <a class="dropdown-item"></i>&nbsp;&nbsp;Your work has been approved!</a>
+                        <a class="dropdown-item"></i>&nbsp;&nbsp;Your work are pending for approval!</a>
+                        <a class="dropdown-item"></i>&nbsp;&nbsp;Due date Tomorrow!</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-5 mb-6 mb-md-0" style="right: 6%;">
+                <h4 id="User_Name" class="mt-1" style="text-align: right;">SASREEN ABDUNSOMAD</h4>
+                <h4 class="Role">Student</h4>
+
+            </div>
+            <div class="col-lg-2 col-md-1 mb-6 mb-md-0 " style="right: 8%;">
+                <div class="dropdownUser  ">
+
+                    <!--Trigger-->
+
+                    <a class="btn-floating btn-lg black" type="button" id="dropdownMenu3" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><img class="mr-2" id="set_image"
+                            src="https://pro.propeller.in/assets/images/avatar-icon-40x40.png" width="40" height="40"
+                            alt="avatar"></a>
+                    <br>
+
+                    <!--Menu-->
+                    <div class="dropdown-menu dropdown">
+                        <a class="dropdown-item" href="/sturesult"></i>&nbsp;&nbsp;SCORE <img
+                                src="/assets/images/grade.png" style="width: 25%; margin-left: 6%;"></a>
+                        <a class="dropdown-item" id="log_out"></i>&nbsp;&nbsp;LOGOUT <img
+                                src="/assets/images/logout.svg" style="width: 20%; margin-left: 4%;"></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <!-- Navbar -->
+
+
+    <!-- Progress bar -->
+    <div class="sidebar">
+        <a href="/stucreategroup">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <i class="fa fa-group" style="font-size: 30px;"></i>
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">GROUP</p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock">
+
+
+                </div>
+            </div>
+        </a>
+        <a href="/stucreatetopic" class="active" id="toppic">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/2 topic-w.svg" style="width: 35px;height: 40px;">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">TOPIC</p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="toppicch">
+                </div>
+            </div>
+        </a>
+        <a href="/stuproposalapproval" id="proposal">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/3 proposal-w.svg" style="width: 35px;height: 40px;">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">PROPOSAL</p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="proposalch">
+                </div>
+            </div>
+        </a>
+        <a href="/stuprogress1approval" id="progress1">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/4 progress1-w.svg" style="width: 35px;height: 40px;">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">PROGRESS 1 </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="progress1ch">
+                </div>
+            </div>
+        </a>
+        <a href="/stuprogress2approval" id="progress2">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/5 progress2-w.svg" style="width: 35px;height: 35px;">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">PROGRESS 2</p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="progress2ch">
+                </div>
+            </div>
+        </a>
+
+        <a href="/stuprogress3approval" id="progress3">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/6 progress3-w.svg" style="width: 35px;height: 40px;">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">PROGRESS 3</p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="progress3ch">
+
+                </div>
+            </div>
+        </a>
+        <a href="/stufinalpresentationapproval" id="finalpre">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/7 finalpre-w.svg" style="width: 35px;height: 40px;">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">FINAL PRESENTATION</p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="finalprech">
+                </div>
+            </div>
+        </a>
+        <a href="/stufinaldocabstractapproval" id="finaldoc">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/8 finaldoc-w.svg" style="width: 35px;height: 40px;">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">FINAL DOCUMENTATION</p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="finaldocch">
+                </div>
+            </div>
+        </a>
+        <a href="/stureevaluationapproval" id="reevalue">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/10 re-eva-w.svg" style="width: 35px;height: 40px;">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">RE-EVALUATION</p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="reevaluech">
+                </div>
+            </div>
+        </a>
+        <div class="row proposal Card_blank ">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container-lg-12 fixed-top " id="pro" style="top: 14%; background-color: white; ">
+            <ul class="progressbar mt-3 ml-4 ">
+                <li class="active"><span
+                        style="background-image:  url('/assets/images/group.svg');color: rgb(247, 4, 4);"></span>&nbsp;
+                </li>
+                <li id="toppicco"><span
+                        style="background-image:  url('/assets/images/2 topic.svg');color: black;"></span>&nbsp;
+                </li>
+                <li id="proposalco"><span
+                        style="background-image:  url('/assets/images/3 proposal.svg');color: rgb(252, 1, 1);"></span>&nbsp;
+                </li>
+                <li id="progress1co"><span
+                        style="background-image:  url('/assets/images/4\ progress1.svg');color: black;"></span>&nbsp;
+                </li>
+                <li id="progress2co"><span
+                        style="background-image:  url('/assets/images/5\ progress2.svg');color: black;"></span>&nbsp;
+                </li>
+                <li id="progress3co"><span
+                        style="background-image:  url('/assets/images/6\ progress3.svg');color: black;"></span>&nbsp;
+                </li>
+                <li id="finalpreco"><span
+                        style="background-image:  url('/assets/images/7\ finalpre.svg');color: black;"></span>&nbsp;
+                </li>
+                <li id="finaldocco"><span
+                        style="background-image:  url('/assets/images/8\ finaldoc.svg');color: black;"></span>&nbsp;
+                </li>
+                <li id="reevalueco"><span
+                        style="background-image:  url('/assets/images/9\ re-eva.svg');color: black;"></span>&nbsp;
+                </li>
+                <!-- <li class="active"><span></span>&nbsp;</li>
+                <li ><span></span>&nbsp;</li>
+                <li ><span></span>&nbsp;</li> -->
+            </ul>
+        </div>
+        <div class="container-fluid dashboard-content">
+            <div class="Senior_project_title">
+                <h1 id="Senior_project_title"> TOPIC EVALUATION</h1>
+            </div>
+            <!-- Text_senior_project -->
+
+            <!-- Underline -->
+            <div style="border: 0.5px solid  rgb(172, 171, 171); width: 100%;"></div>
+            <div class="row ">
+
+                <div class="col md-12">
+                    <span class="badge badge-primary float-right  "
+                        style="background-color: #253B6E; height: 60%; width: 30%; font-size: 18px;">Duo Tomorrow,
+                        11:59 PM</span>
+
+                </div>
+
+
+                <br><br>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class="col-md-3">
+                        <h1 class="float-left" style="color:  #253B6E;"> <img src="/assets/images/std-topic.svg"
+                                style="width: 25%; margin-right: 8%;">TOPIC</h1>
+                    </div>
+                    <div class="col-md-7 mt-2">
+
+                    </div>
+                    <div class="col md-2">
+                        <h3 class="assignment_status">Assigned</h3>
+
+                    </div>
+
+
+                    <br><br>
+
+                </div>
+                <form>
+                    <div class="form-group row mt-4">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label "> <b id="status_name">Project
+                                Name</b></label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="English Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label "></label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="Thai Name">
+                        </div>
+                    </div>
+
+                </form>
+                <br>
+                <h3 class="" style="font-size: 28px;" id="status_name">Project Member</h3>
+                <br>
+
+                <form>
+                    <div class="row ">
+                        <div class="col-2 ">
+                            <b id="status_name">Student 1</b>
+                        </div>
+                        <div class="col-4">
+                            <h5>Anuwat Bunrueng</h5>
+
+                        </div>
+                        <div class="col-3">
+                            <h5>6131302009</h5>
+
+                        </div>
+                        <div class="col-3">
+                            <h5>000-0000</h5>
+
+                        </div>
+                    </div>
+                </form>
+                <form>
+                    <div class="row ">
+                        <div class="col-2 ">
+                            <b id="status_name">Student 2</b>
+                        </div>
+                        <div class="col-4">
+                            <h5>Anuwat Bunrueng</h5>
+
+                        </div>
+                        <div class="col-3">
+                            <h5>6131302009</h5>
+
+                        </div>
+                        <div class="col-3">
+                            <h5>000-0000</h5>
+
+                        </div>
+                    </div>
+                </form>
+
+                <form>
+                    <div class="row ">
+                        <div class="col-2 ">
+                            <b id="status_name">Student 3</b>
+                        </div>
+                        <div class="col-4">
+                            <h5>Anuwat Bunrueng</h5>
+
+                        </div>
+                        <div class="col-3">
+                            <h5>6131302009</h5>
+
+                        </div>
+                        <div class="col-3">
+                            <h5>000-0000</h5>
+
+                        </div>
+                    </div>
+                </form>
+
+                <div>
+                    <h3 id="status_name" class="mt-5" style="font-size: 28px;">Project Advisor</h3>
+                    <b>Anuwat Bunrueng</b>
+                </div>
+
+
+                <div>
+                    <h3 id="status_name" class="mt-5" style="font-size: 28px;">Project Committee</h3>
+                    <b>Anuwat Bunrueng</b> <br>
+                    <b>Anuwat Bunrueng</b>
+                </div>
+
+
+
+                <div class="row mt-5">
+                    <div class="col-md-8">
+                        <div class="card_submission" style="width:110%;">
+                            <div class="card-body">
+                                <img src="/assets/images/pdf.jpg" style="width: 15%; margin-left: 43%;"
+                                    class="mt-2 mb-2">
+                                <button type="button" class="btn btn-outline-secondary mt-5" id="cardBtn">ADD
+                                    FILE</button>
+
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary mt-5" id="btn_unsubmit">UNSUBMIT</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

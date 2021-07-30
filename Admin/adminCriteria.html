@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/styleAdmin">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="/adminjs/criteriaAdmin.js"></script>
+    <title>Criteria</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse fixed-top">
+        <div class="container-fluid">
+            <div class="col-lg-10 col-md-6 mb-6 mb-md-0">
+                <a href="#"><img src="/assets/images/IT Logo.png" id="IT_nav_logo"></a>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-6 mb-md-0">
+                <button type="button" class="btn btn  text-light  float-right" id="log_out"><img
+                        src="/assets/images/Admin/logout-w.svg" id="icon_ex" class="mr-2"> </i> LOG OUT</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="/adminhome">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/user-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p>USER </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminassignment">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/assignment-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">ASSIGNMENT</p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+        <a href="/admingroup">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/group-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">GROUP </p>
+                </div>
+                <div class="col-1 mt-3 ml-1" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminscore">
+            <div class="row proposal Card_proposal ">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/score-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal">SCORE</p>
+                </div>
+                <div class="col-1 mt-3" id="lock"></div>
+            </div>
+        </a>
+        <a href="/admincriteria" class="active">
+            <div class="row proposal Card_proposal " id="sb_active">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/criteria.svg" id="icon_sb">
+                </div>
+                <div class="col-7 mt-4">
+                    <p id="Text_proposal"> <b>CRITERIA</b> </p>
+                </div>
+                <div class="col-1 mt-3 ml-4" id="lock"></div>
+            </div>
+        </a>
+        <a href="/adminnews">
+            <div class="row proposal Card_proposal mb-2">
+                <div class="col-0 mt-3">
+                    <img src="/assets/images/Admin/sidebar/assignment-w.svg" id="icon_sb">
+                </div>
+                <div class="col-8 mt-4">
+                    <p id="Text_proposal"> <b>NEWS</b> </p>
+                </div>
+                <div class="col-1 mt-3 ml-2" id="lock"></div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h3 id="title_page"><b>CRITERIA</b></h3>
+        <div class="mt-4">
+            <div class="row mt-4">
+                <div class="col-lg-5 col-md-6 col-mb-6 mb-4">
+                    <h5>STUDY PROGRAMES</h5>
+                    <div>
+                        <select class="form-control" id="selectMajor">
+                            <option value="IT">Information Technology</option>
+                            <option value="CE">Computer Engineering</option>
+                            <option value="CSI">Computer Science and Innovation</option>
+                            <option value="ICE">Information and Communication Engineering</option>
+                            <option value="MTA">Multimedia Technology and Animation</option>
+                            <option value="SE">Software Engineering</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6 col-mb-6"></div>
+            </div>
+        </div>
+
+        <!-- Grade criteria -->
+        <div class="row">
+            <div class="col">
+                <h4 class=" mt-4"><b>GRADE CRITERIA</b></h4>
+            </div>
+            <div class="card-body">
+                <button class="btn btn-info float-right" type="button" id="btnAssignGrade" data-toggle="modal"
+                    data-target="#gradeModal"><b>ASSIGN</b>
+                </button>
+                <button class="btn btn-warning float-right" type="button" id="btnEditGrade" data-toggle="modal"
+                    data-target="#gradeModal"><b>EDIT</b>
+                </button>
+            </div>
+        </div>
+        <p>Grading criteria weight requirement for senior project 1</p>
+
+        <!-- Grade Table -->
+        <table id="gradeTable" class="table table-bordered  table-responsive-xl  mt-5 text-center" style="width:100%;"></table>
+
+        <hr class="mt-5">
+
+        <!-- Score criteria -->
+        <div class="row">
+            <div class="col">
+                <h4 class=" mt-4"><b>SCORE CRITERIA</b></h4>
+            </div>
+            <div class="card-body">
+                <button class="btn btn-warning float-right" type="button" id="btnEditScore" data-toggle="modal"
+                    data-target="#scoreModal"><b>EDIT</b></button>
+            </div>
+        </div>
+        <p>Scoring criteria weight requirement for senior project 1</p>
+
+        <table id="scoreTable" class="table table-bordered  table-responsive-xl my-5 text-center" style="width:100%;"> </table>
+    </div>
+
+    <!-- Grade Modal  -->
+    <div class="modal fade" id="gradeModal" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">GRADE CRITERIA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">GRADE</label>
+                        <div class="col-sm-4">
+                            <p class="form-control-plaintext" id="gradeS" style="color: red;"><b>S</b></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">LOWEST SCORE</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="lowS">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">HIGHEST SCORE</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="highS">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">GRADE</label>
+                        <div class="col-sm-4">
+                            <p class="form-control-plaintext" id="gradeU" style="color: red;"> <b>U</b> </p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">LOWEST SCORE</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="lowU">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">HIGHEST SCORE</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="highU">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                    <button id="saveEdit" type="button" class="btn btn-primary">SAVE</button>
+                    <button id="saveAssign" type="button" class="btn btn-primary">SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Score Modal -->
+    <div class="modal fade" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">SCORE CRITERIA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Progress 1 -->
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label"><b>PROGRESS 1</b></label>
+                        <div class="col-sm-10">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">ADVISOR</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="advisorprogress1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">COMMITTEE 1</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="commitee1progress1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">COMMITTEE 2</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="commitee2progress1">
+                        </div>
+                    </div>
+                    <!-- progress 2 -->
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label"><b>PROGRESS 2</b></label>
+                        <div class="col-sm-10">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">ADVISOR</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="advisorprogress2">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">COMMITTEE 1</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="commitee1progress2">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">COMMITTEE 2</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="commitee2progress2">
+                        </div>
+                    </div>
+                    <!-- Progress 3 -->
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label"><b>PROGRESS 3</b> <a href="#"><span
+                            class="fa fa-exclamation-circle ml-2" data-toggle="tooltip"
+                            data-original-title="If does not have progress 3, submit form and skip this field."></span></a></label>
+                        <div class="col-sm-10">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">ADVISOR</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="advisorprogress3">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">COMMITTEE 1</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="commitee1progress3">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">COMMITTEE 2</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="commitee2progress3">
+                        </div>
+                    </div>
+                    <!-- Final Presentation -->
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label"> <b>FINAL PRESENTATION</b></label>
+                        <div class="col-sm-10">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">ADVISOR</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="finalpresentadvisor">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">COMMITTEE 1</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="finalpresentcommittee1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">COMMITTEE 2</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="finalpresentcommittee2">
+                        </div>
+                    </div>
+                    <!-- Final Documentation -->
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label"> <b>FINAL DOCUMENTATION</b></label>
+                        <div class="col-sm-10">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">ADVISOR</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="finaldocumentadvisor">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">COMMITTEE 1</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="finaldocumentcommittee1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">COMMITTEE 2</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="finaldocumentcommittee2">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary " data-dismiss="modal">CLOSE</button>
+                    <button id="saveScore" type="button" class="btn btn-primary">SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="/assets/js/checkpage.js"></script>
+
+
+</html>

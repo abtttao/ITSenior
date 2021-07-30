@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="/studentjs/stustudentlogin.js"></script>
+   
+
+    <style>
+        .btn {
+            background-color:  #253B6E ;
+            color: white;
+          
+        }
+        a{
+            color: white;
+        }
+    </style>
+</head>
+
+<script>
+    $(document).ready(function(){
+
+    })
+</script>
+
+<body>
+        <div class="container text-center">
+            <br><br><br><br>
+            <img src="/assets/images/itlogo.png"  >
+            <h4 class="mt-5" style="font-weight: bold;" >SENIOR PROJECT</h4>
+            <h4 style="color: #253B6E; font-weight: bold;">INFORMATION TECHNOLOGY</h4>
+            <h4 style="color: grey; font-weight: bold; font-size: 20px;"> MAE FAH LUANG UNIVERSITY</h4>
+          
+            <div class="row d-flex justify-content-center  mt-4" >
+                <input type="text" placeholder="Email" class="form-control"  style="width: 35%;">
+            </div>
+        
+            <div class="row d-flex justify-content-center   mt-3" >
+                <input type="text" placeholder="Password" class="form-control"  style="width: 35%;">
+            </div>
+        
+            <button type="submit" class="btn mb-2  mt-5" style="width: 25%; height: 44px;"  > <a href="/stucreategroup">LOGIN</a> </button> <br>
+            <button type="submit" onclick="window.location.replace('/auth/google')" class="btn" style="width: 25%; background-color: lightgrey; color: black;" > <img src="/assets/images/google.png" style="width: 28px;"> LOGIN WITH GOOGLE</button>
+            
+        </div>
+    
+</body>
+</html>

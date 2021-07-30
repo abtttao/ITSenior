@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/styleStudent">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>
+    <script type="text/javascript" src="/studentjs/stucreategroup.js"></script>
+    <title>Create Group</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a href="#"><img src="/assets/images/IT Logo.png" id="IT_nav_logo"></a>
+
+        <!-- //Information User// -->
+        <div class="card text-right" id="CardName">
+            <div class="card-body">
+                <div class="row ">
+                    <div class="col" id="profile-name">
+                        <!-- //Name User// -->
+                        <h4 id="User_Name"></h4>
+                        <h4 id="Role1">STUDENT</h4>
+                    </div>
+                    <div class="col-md-auto">
+
+                        <!-- ///Profile User/// -->
+                        <div class="dropdownUser ">
+                            <a class="btn-floating btn-lg black" type="button" id="ImgUser" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"> <img id="set_image"
+                                    src="https://pro.propeller.in/assets/images/avatar-icon-40x40.png" width="50"
+                                    height="50" alt="avatar"></a>
+
+                            <div class="dropdown-menu dropdown">
+                                <a class="dropdown-item" href="/sturesult"></i>&nbsp;&nbsp;SCORE <img
+                                        src="/assets/images/grade.png" style="width: 25%; margin-left: 6%;"></a>
+                                <a class="dropdown-item" id="log_out"></i>&nbsp;&nbsp;LOGOUT <img
+                                        src="/assets/images/logout.svg" style="width: 20%; margin-left: 4%;"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    <div class="container-lg-12" id="pro" style="top: 14%; background-color: white; ">
+        <ul class="progressbar mt-3 ml-4 ">
+            <li class="active"><span
+                    style="background-image:  url('/assets/images/group.svg');color: rgb(247, 4, 4);"></span>&nbsp;
+            </li>
+            <li id="toppicco"><span
+                    style="background-image:  url('/assets/images/2 topic.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="proposalco"><span
+                    style="background-image:  url('/assets/images/3 proposal.svg');color: rgb(252, 1, 1);"></span>&nbsp;
+            </li>
+            <li id="progress1co"><span
+                    style="background-image:  url('/assets/images/4\ progress1.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="progress2co"><span
+                    style="background-image:  url('/assets/images/5\ progress2.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="progress3co"><span
+                    style="background-image:  url('/assets/images/6\ progress3.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="finalpreco"><span
+                    style="background-image:  url('/assets/images/7\ finalpre.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="finaldocco"><span
+                    style="background-image:  url('/assets/images/8\ finaldoc.svg');color: black;"></span>&nbsp;
+            </li>
+            <li id="reevalueco"><span
+                    style="background-image:  url('/assets/images/9\ re-eva.svg');color: black;"></span>&nbsp;
+            </li>
+        </ul>
+    </div>
+    <!-- Side bar -->
+    <div class="sidebar">
+        <a href="/stucreategroup" class="active">
+            <i class="fa fa-group ml-2 " style="font-size: 30px;"></i>
+            <span class="MenuText  ml-2"> GROUP </span>
+            <span class="MenuText " id="lock"></span>
+        </a>
+
+        <a href="/stucreatetopic" id="toppic">
+            <img src="/assets/images/2 topic-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> TOPIC </span>
+            <span id="toppicch" class="MenuText  float-right mt-2"> </span>
+        </a>
+
+        <a href="/stuproposalapproval" id="proposal">
+            <img src="/assets/images/3 proposal-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROPOSAL </span>
+            <span id="proposalch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stuprogress1approval" id="progress1">
+            <img src="/assets/images/4 progress1-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROGRESS 1</span>
+            <span id="progress1ch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stuprogress2approval" id="progress2">
+            <img src="/assets/images/5 progress2-w.svg" style="width: 35px;height: 35px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROGRESS 2</span>
+            <span id="progress2ch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stuprogress3approval" id="progress3">
+            <img src="/assets/images/6 progress3-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> PROGRESS 3</span>
+            <span id="progress3ch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stufinalpresentationapproval" id="finalpre">
+            <img src="/assets/images/7 finalpre-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText ml-2"> FINAL PRESENTATION</span>
+            <span id="finalprech" class="MenuText float-right mt-2"></span>
+        </a>
+
+        <a href="/stufinaldocabstractapproval" id="finaldoc">
+            <img src="/assets/images/8 finaldoc-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> FINAL DOCUMENTATION</span>
+            <span id="finaldocch" class="MenuText  float-right mt-2"></span>
+        </a>
+
+        <a href="/stureevaluationapproval" id="reevalue">
+            <img src="/assets/images/10 re-eva-w.svg" style="width: 35px;height: 40px;" class="ml-2">
+            <span class="MenuText  ml-2"> RE-EVALUATION</span>
+            <span id="reevaluech" class="MenuText  float-right mt-2"></span>
+        </a>
+        <div class="row proposal Card_blank ">
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators" id="inde">
+            </ol>
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner" id="numberofcar">
+                <h4 class="text-center mt-4" id="News"><i class="fa fa-bullhorn mr-4"
+                        aria-hidden="true"></i><B>ANNOUNCEMENT</B></h4>
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+        <!-- Title -->
+        <div class="Senior_project_title  text-center">
+            <h2>SENIOR PROJECT</h2><br>
+
+            <!-- Underline -->
+            <div style="border: 0.5px solid  rgb(172, 171, 171); " id="Underline"></div>
+        </div>
+
+        <div id="createGroup" class="text-center">
+            <div class="row" style="margin-top: 15%; color:#BDBDBD;">
+                <h2>No Project</h2>
+            </div>
+            <button type="button" class="btn btn-primary" id="btn_group">CREATE GROUP</button>
+        </div>
+
+        <div id="groupInfo">
+            <br>
+            <br>
+            <div class="row ">
+                <div class="col-md-4">
+                    <h3><b>Project Name</b></h3>
+                </div>
+
+                <div class="col-md-7">
+                    <h4 id="projectNameEng"></h4>
+                    <br>
+                    <h4 id="projectNameThai"></h4>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row mt-4 student">
+                <div class="col-md-5">
+                    <h3><b>Project Member </b></h3>
+                </div>
+                <div class="col-md-7">
+                </div>
+            </div>
+            <h4 id="studentMember"></h4>
+            <br>
+
+            <div class="row mt-4 advisor">
+                <div class="col-md-5">
+                    <h3><b>Project Advisor </b></h3>
+                </div>
+                <div class="col-md-7">
+                </div>
+            </div>
+            <div id="advisorMember"></div>
+            <br>
+
+            <div class="row mt-4 committee">
+                <div class="col-md-5">
+                    <h3><b>Project Committee</b></h3>
+                </div>
+                <div class="col-md-7">
+                </div>
+            </div>
+            <div id="committeeMember"></div>
+            <br>
+
+            <div class="row mt-4 coAdvisor">
+                <div class="col-md-5">
+                    <h3><b>Project Co-Advisor</b></h3>
+                </div>
+                <div class="col-md-7">
+                </div>
+            </div>
+            <div id="coAdvisorMember"></div>
+        </div>
+    </div>
+    <br><br><br>
+
+    </div>
+
+</body>
+
+</html>
